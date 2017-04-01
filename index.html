@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Toast</title>
+  <style>
+    body { background: #f0f2f5; height: 100vh; display: flex; justify-content: center; align-items: center; margin: 0; }
+    button { padding: 12px 24px; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    .toast { position: fixed; bottom: 20px; right: 20px; background: #333; color: white; padding: 15px 25px; border-radius: 8px; transform: translateX(400px); transition: transform 0.4s; }
+  </style>
+</head>
+<body>
+  <button onclick="showToast()">Show Toast</button>
+  <div id="toast" class="toast">Success! Action completed.</div>
+  <script>
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.style.transform = 'translateX(0)';
+      setTimeout(() => toast.style.transform = 'translateX(400px)', 3000);
+    }
+  </script>
+</body>
+</html>
